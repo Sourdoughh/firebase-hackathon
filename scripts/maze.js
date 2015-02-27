@@ -47,7 +47,7 @@ Player.prototype.checkMove = function(row, column){
 
 //the move function should add or subtract from the player's position
 Player.prototype.move = function(movement){
-  if (movement !== undefined) {  
+  if (movement !== undefined) {
       var dangMove = movement.toLowerCase();
       var oldrow = this.x;
       var oldcol = this.y;
@@ -70,7 +70,7 @@ Player.prototype.move = function(movement){
       } else if (dangMove === 'right') {
         this.y++;
         if(!this.checkMove(this.x, this.y)){
-          this.x--;
+          this.y--;
         }
       } else {
         console.log('Invalid command')
@@ -81,7 +81,7 @@ Player.prototype.move = function(movement){
 }
 
 var updateMaze = function(oldrow, oldcol) {
-  maze[oldrow][oldcol] = 0;  
+  maze[oldrow][oldcol] = 0;
   maze[player.x][player.y] = 2;
   displayMaze();
 };
